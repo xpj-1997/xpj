@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="user" namespace="/user" extends="struts-default">
+        <action name="*" class="org.apache.control.UserController" method="{1}">
+            <!---登录-->
+            <result name="loginSuccess" type="dispatcher">/province/provincelist.jsp</result>
+            <result name="fail" type="dispatcher">/login.jsp</result>
+        </action>
+        
+        <action name="code" class="org.apache.control.ValidationCodeAction">
+            <result type="stream">
+                <param name="contentType">/image/png</param>
+            </result>
+        </action>
+    </package>
+
+</struts>
