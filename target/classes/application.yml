@@ -1,0 +1,19 @@
+server:
+  port: 6720 #指定内嵌Tomcat端口号
+  servlet:
+    context-path: /my #指定当前项目访问名字
+spring:
+  mvc:
+    view:    #配置试图解析器
+      prefix: /
+      suffix: .jsp
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+#mybatis相关配置
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml #指定mapper文件位置
+  type-aliases-package: com.example.entity
