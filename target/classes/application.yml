@@ -2,6 +2,9 @@ server:
   port: 6720 #指定内嵌Tomcat端口号
   servlet:
     context-path: /my #指定当前项目访问名字
+    jsp:  #开启jsp热部署
+      init-parameters:
+        development: true
 spring:
   mvc:
     view:    #配置试图解析器
@@ -13,6 +16,10 @@ spring:
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: root
+  servlet:
+    multipart:
+      max-file-size: 1MB #单次上传文件大小
+      max-request-size: 5MB #文件总上传大小
 #mybatis相关配置
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml #指定mapper文件位置
