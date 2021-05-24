@@ -131,6 +131,7 @@
     </dependencies>
 
     <build>
+        <!--引入jsp运行插件-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
